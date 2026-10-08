@@ -1,0 +1,75 @@
+{
+  "login": {
+    "title": "로그인",
+    "subtitle": "IoT 장치 관리를 위해 로그인하세요",
+    "email": "이메일 / 계정",
+    "email_hint": "이메일을 입력하세요",
+    "password": "비밀번호",
+    "password_hint": "비밀번호를 입력하세요",
+    "btn_login": "로그인",
+    "btn_signup": "회원가입",
+    "btn_email": "사용자계정 로그인",
+    "no_account": "계정이 없으신가요?",
+    "social_title": "소셜 계정으로 로그인",
+    "footer_company": "NEXIOT · 넥스필드솔루션",
+    "footer_contact": "고객지원: support@nexfield.net"
+  },
+  "menu": {
+    "devices": "종합 화면",
+    "monitoring": "모니터링",
+    "events": "이벤트",
+    "history": "이력 보기",
+    "login": "로그인",
+    "settings": "설정"
+  },
+  "settings": {
+    "title": "설정하기",
+    "device": "내 장치명",
+    "device_settings": "디바이스 설정",
+    "server_settings": "서버 설정",
+    "other_settings": "기타 설정",
+    "bluetooth": "블루투스 연결",
+    "wifi": "WiFi 연결",
+    "remote": "원격 서버",
+    "language": "언어설정",
+    "system_info": "시스템 정보",
+    "firmware_update": "펌웨어 업데이트"
+  },
+  "summary": {
+    "subtitle": "실시간 IoT 모니터링",
+    "compact": "요약 보기",
+    "operation_rate": "운영 현황",
+    "normal_rate": "정상률",
+    "total": "전체",
+    "normal": "정상",
+    "fault": "불량",
+    "maintenance": "점검",
+    "recent_connections": "최종 접속 기록"
+  },
+  "language": {
+    "title": "언어설정",
+    "korean": "한국어",
+    "english": "English"
+  },
+  "common": {
+    "ok": "확인",
+    "cancel": "취소"
+  },
+  "device": {
+    "detail_title": "장치 상세 정보",
+    "node_label": "IoT DEVICE NODE",
+    "temperature": "온도",
+    "humidity": "습도",
+    "voltage": "전압",
+    "status": "상태 정보",
+    "ble_status": "BLE 상태",
+    "uptime": "연속 가동",
+    "realtime_trend": "실시간 트렌드",
+    "action_settings": "설정",
+    "action_control": "제어",
+    "action_reset": "초기화"
+  },
+  "app": {
+    "exit_confirm": "프로그램을 종료하시겠습니까?"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "login": {
+    "title": "Sign In",
+    "subtitle": "Sign in to manage your IoT devices",
+    "email": "Email / Account",
+    "email_hint": "Enter your email",
+    "password": "Password",
+    "password_hint": "Enter your password",
+    "btn_login": "Sign In",
+    "btn_signup": "Sign Up",
+    "btn_email": "User Account Login",
+    "no_account": "Don't have an account?",
+    "social_title": "Sign in with",
+    "footer_company": "NEXIOT · Nexfield Solution",
+    "footer_contact": "Contact: support@nexfield.net"
+  },
+  "menu": {
+    "devices": "Summary",
+    "monitoring": "Monitoring",
+    "events": "Events",
+    "history": "History",
+    "login": "Sign In",
+    "settings": "Settings"
+  },
+  "settings": {
+    "title": "Settings",
+    "device": "Device",
+    "device_settings": "Device Settings",
+    "bluetooth": "Bluetooth",
+    "wifi": "WiFi",
+    "remote": "Remote",
+    "language": "Language",
+    "system_info": "System Info",
+    "firmware_update": "Firmware Update"
+  },
+  "summary": {
+    "subtitle": "Real-time IoT Monitoring",
+    "compact": "Summary View",
+    "operation_rate": "Operation Status",
+    "normal_rate": "Normal Rate",
+    "total": "Total",
+    "normal": "Normal",
+    "fault": "Fault",
+    "maintenance": "Maint.",
+    "recent_connections": "Recent Connections"
+  },
+  "language": {
+    "title": "Language",
+    "korean": "한국어",
+    "english": "English"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel"
+  },
+  "device": {
+    "detail_title": "Device Detail",
+    "node_label": "IoT DEVICE NODE",
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "voltage": "Voltage",
+    "status": "Status",
+    "ble_status": "BLE Status",
+    "uptime": "Uptime",
+    "realtime_trend": "Real-time Trend",
+    "action_settings": "Settings",
+    "action_control": "Control",
+    "action_reset": "Reset"
+  },
+  "app": {
+    "exit_confirm": "Do you want to exit the app?"
+  }
+}
