@@ -11,7 +11,7 @@
     "btn_email": "사용자계정 로그인",
     "no_account": "계정이 없으신가요?",
     "social_title": "소셜 계정으로 로그인",
-    "footer_company": "NEXIOT · 넥스필드솔루션",
+    "footer_company": "· 넥스필드솔루션",
     "footer_contact": "고객지원: support@nexfield.net"
   },
   "menu": {
@@ -26,9 +26,9 @@
     "title": "설정하기",
     "device": "내 장치명",
     "device_settings": "디바이스 설정",
-    "server_settings": "서버 설정",
+    "device_wifi_settings": "디바이스 WiFi 설정",
     "other_settings": "기타 설정",
-    "bluetooth": "블루투스 연결",
+    "device_bluetooth_settings": "디바이스 블루투스 설정",
     "wifi": "WiFi 연결",
     "remote": "원격 서버",
     "language": "언어설정",
@@ -38,8 +38,7 @@
   "summary": {
     "subtitle": "실시간 IoT 모니터링",
     "compact": "요약 보기",
-    "operation_rate": "운영 현황",
-    "normal_rate": "정상률",
+    "normal_rate": "가동률",
     "total": "전체",
     "normal": "정상",
     "fault": "불량",
@@ -71,5 +70,23 @@
   },
   "app": {
     "exit_confirm": "프로그램을 종료하시겠습니까?"
+  },
+  "ble": {
+    "scan_title": "블루투스 기기 검색",
+    "connected_title": "블루투스 연결정보",
+    "scanning": "스캔 중...",
+    "no_devices": "IoT 기기가 없습니다",
+    "connecting": "연결 중...",
+    "connect_fail": "블루투스 연결 실패. 다시 시도해주세요.",
+    "disconnect_confirm": "블루투스 연결을 끊으시겠습니까?",
+    "disconnect": "연결끊기",
+    "diagnose": "진단하기",
+    "location_permission": "블루투스 스캔을 위해 위치(GPS) 서비스를 활성화하고 위치 권한을 허용해주세요.",
+    "pw_setup_title": "비밀번호 설정",
+    "pw_hint": "비밀번호",
+    "new_pw_hint": "새 비밀번호",
+    "pw_required": "비밀번호를 입력해주세요",
+    "pw_min_length": "8자 이상 입력해주세요",
+    "pw_send_fail": "BLE장치 연결에 실패했습니다."
   }
 }

@@ -62,6 +62,8 @@ class _WifiSettingsModalState extends State<WifiSettingsModal> {
 
     setState(() {
       _results = results
+          .where((ap) => ap.ssid.toLowerCase().contains('iot'))
+          .toList()
         ..sort((a, b) => b.level.compareTo(a.level));
       _isScanning = false;
     });
@@ -79,6 +81,14 @@ class _WifiSettingsModalState extends State<WifiSettingsModal> {
   }
 
   Future<String?> _showPasswordDialog(String ssid) async {
+    final hasSaved = _appState.wifiPassword.value != null;
+    return hasSaved
+        ? _showPasswordInput(ssid)
+        : _showPasswordSetup(ssid);
+  }
+
+  // 비밀번호가 저장된 경우 — 입력창 1개
+  Future<String?> _showPasswordInput(String ssid) async {
     final ctrl = TextEditingController();
     bool obscure = true;
     return showDialog<String>(
@@ -93,34 +103,11 @@ class _WifiSettingsModalState extends State<WifiSettingsModal> {
               const Text('비밀번호 입력',
                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
               const SizedBox(height: 4),
-              Text(ssid,
-                  style: const TextStyle(color: accentColor, fontSize: 13)),
+              Text(ssid, style: const TextStyle(color: accentColor, fontSize: 13)),
             ],
           ),
-          content: TextField(
-            controller: ctrl,
-            autofocus: true,
-            obscureText: obscure,
-            style: const TextStyle(color: Colors.white),
-            decoration: InputDecoration(
-              hintText: '비밀번호',
-              hintStyle: const TextStyle(color: Colors.white38),
-              enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.white24),
-              ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: accentColor),
-              ),
-              suffixIcon: IconButton(
-                icon: Icon(
-                  obscure ? Icons.visibility_off : Icons.visibility,
-                  color: Colors.white38,
-                  size: 20,
-                ),
-                onPressed: () => setDlg(() => obscure = !obscure),
-              ),
-            ),
-          ),
+          content: _pwField('비밀번호', ctrl, obscure,
+              () => setDlg(() => obscure = !obscure)),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
@@ -131,6 +118,71 @@ class _WifiSettingsModalState extends State<WifiSettingsModal> {
               child: Text('확인', style: TextStyle(color: primaryColor)),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  // 비밀번호 미설정 — 설정창 2개 (비밀번호 + 새 비밀번호)
+  Future<String?> _showPasswordSetup(String ssid) async {
+    final curCtrl = TextEditingController();
+    final newCtrl = TextEditingController();
+    bool obscureCur = true;
+    bool obscureNew = true;
+    return showDialog<String>(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setDlg) => AlertDialog(
+          backgroundColor: secondaryColor,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('비밀번호 설정',
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+              const SizedBox(height: 4),
+              Text(ssid, style: const TextStyle(color: accentColor, fontSize: 13)),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _pwField('비밀번호', curCtrl, obscureCur,
+                  () => setDlg(() => obscureCur = !obscureCur)),
+              const SizedBox(height: 12),
+              _pwField('새 비밀번호', newCtrl, obscureNew,
+                  () => setDlg(() => obscureNew = !obscureNew)),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('취소', style: TextStyle(color: Colors.white54)),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, newCtrl.text),
+              child: Text('확인', style: TextStyle(color: primaryColor)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _pwField(String hint, TextEditingController ctrl, bool obscure, VoidCallback toggle) {
+    return TextField(
+      controller: ctrl,
+      obscureText: obscure,
+      style: const TextStyle(color: Colors.white),
+      decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: const TextStyle(color: Colors.white38),
+        enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.white24)),
+        focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: accentColor)),
+        suffixIcon: IconButton(
+          icon: Icon(obscure ? Icons.visibility_off : Icons.visibility,
+              color: Colors.white38, size: 20),
+          onPressed: toggle,
         ),
       ),
     );
@@ -243,6 +295,11 @@ class _WifiSettingsModalState extends State<WifiSettingsModal> {
               onTap: _startScan,
               child: const Icon(Icons.refresh, color: Colors.white54, size: 20),
             ),
+          const SizedBox(width: 14),
+          GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: const Icon(Icons.close, color: Colors.white54, size: 20),
+          ),
         ],
       ),
       content: SizedBox(
@@ -300,12 +357,7 @@ class _WifiSettingsModalState extends State<WifiSettingsModal> {
                     },
                   ),
       ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.pop(context),
-          child: const Text('취소', style: TextStyle(color: Colors.white54)),
-        ),
-      ],
+      actions: const [],
     );
   }
 

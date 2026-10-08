@@ -12,6 +12,7 @@ class AppState {
 
   final wifiSsid = ValueNotifier<String?>(null);
   final wifiPassword = ValueNotifier<String?>(null);
+  final apPassword = ValueNotifier<String?>(null);
 
   final serverHost = ValueNotifier<String?>('192.168.1.1');
   final serverPort = ValueNotifier<String?>('1883');

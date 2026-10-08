@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:nexiotcombo/constants.dart';
-import 'package:nexiotcombo/screens/main/main_screen.dart';
+import 'package:nexiotcombo/screens/main_screen.dart';
 import 'package:nexiotcombo/services/app_state.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -11,7 +11,7 @@
     "btn_email": "User Account Login",
     "no_account": "Don't have an account?",
     "social_title": "Sign in with",
-    "footer_company": "NEXIOT · Nexfield Solution",
+    "footer_company": "· Nexfield Solution",
     "footer_contact": "Contact: support@nexfield.net"
   },
   "menu": {
@@ -26,8 +26,9 @@
     "title": "Settings",
     "device": "Device",
     "device_settings": "Device Settings",
-    "bluetooth": "Bluetooth",
+    "device_bluetooth_settings": "Device Bluetooth Settings",
     "wifi": "WiFi",
+    "device_wifi_settings": "Device WiFi Settings",
     "remote": "Remote",
     "language": "Language",
     "system_info": "System Info",
@@ -36,8 +37,7 @@
   "summary": {
     "subtitle": "Real-time IoT Monitoring",
     "compact": "Summary View",
-    "operation_rate": "Operation Status",
-    "normal_rate": "Normal Rate",
+    "normal_rate": "Uptime",
     "total": "Total",
     "normal": "Normal",
     "fault": "Fault",
@@ -69,5 +69,23 @@
   },
   "app": {
     "exit_confirm": "Do you want to exit the app?"
+  },
+  "ble": {
+    "scan_title": "Search Bluetooth Devices",
+    "connected_title": "Bluetooth Connection Info",
+    "scanning": "Scanning...",
+    "no_devices": "No IoT devices found",
+    "connecting": "Connecting...",
+    "connect_fail": "Bluetooth connection failed. Please try again.",
+    "disconnect_confirm": "Do you want to disconnect?",
+    "disconnect": "Disconnect",
+    "diagnose": "Diagnose",
+    "location_permission": "Please enable location (GPS) service and allow location permission for Bluetooth scanning.",
+    "pw_setup_title": "Set Password",
+    "pw_hint": "Password",
+    "new_pw_hint": "New password",
+    "pw_required": "Please enter your password",
+    "pw_min_length": "Must be at least 8 characters",
+    "pw_send_fail": "Failed to connect BLE device."
   }
 }
